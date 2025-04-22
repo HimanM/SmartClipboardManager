@@ -58,6 +58,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-### **How to use:**
-1. Copy the above text and paste it into a file named `README.md` inside your project directory.
-2. Modify any project-specific URLs or additional instructions that may be required.
