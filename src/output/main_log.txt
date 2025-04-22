@@ -1,0 +1,6 @@
+Category: CODE
+private static final String MAIN_LOG_FILE = "output/main_log.txt"; // Main log file
+
+Category: TEXT
+clipboard_log.txt
+
