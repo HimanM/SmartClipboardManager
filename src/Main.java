@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -35,7 +36,20 @@ public class Main {
         // Create MenuItems for the popup
         MenuItem startItem = new MenuItem("Start");
         MenuItem pauseItem = new MenuItem("Pause");
+        MenuItem showClipboardItem = new MenuItem("Show Clipboard");
         MenuItem exitItem = new MenuItem("Exit");
+
+
+        showClipboardItem.addActionListener(e -> {
+            clipboardListener.pause();
+            SwingUtilities.invokeLater(() -> {
+                ClipboardViewerWindow viewer = new ClipboardViewerWindow(() -> {
+                    clipboardListener.resume();
+                    pauseItem.setLabel("Pause");
+                });
+                viewer.setVisible(true);
+            });
+        });
 
         // Add action listeners to the menu items
         startItem.addActionListener(e -> {
@@ -63,6 +77,7 @@ public class Main {
         // Add the items to the popup menu
         popupMenu.add(startItem);
         popupMenu.add(pauseItem);
+        popupMenu.add(showClipboardItem);
         popupMenu.addSeparator();
         popupMenu.add(exitItem);
 
